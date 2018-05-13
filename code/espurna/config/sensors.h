@@ -2,14 +2,14 @@
 // SENSORS - General data
 // =============================================================================
 
-#define SENSOR_DEBUG                        0               // Debug sensors
+#define SENSOR_DEBUG                        1               // Debug sensors
 
-#define SENSOR_READ_INTERVAL                6               // Read data from sensors every 6 seconds
+#define SENSOR_READ_INTERVAL                10              // Read data from sensors every 6 seconds
 #define SENSOR_READ_MIN_INTERVAL            6               // Minimum read interval
 #define SENSOR_READ_MAX_INTERVAL            3600            // Maximum read interval
 #define SENSOR_INIT_INTERVAL                10000           // Try to re-init non-ready sensors every 10s
 
-#define SENSOR_REPORT_EVERY                 10              // Report every this many readings
+#define SENSOR_REPORT_EVERY                 6               // Report every this many readings
 #define SENSOR_REPORT_MIN_EVERY             1               // Minimum every value
 #define SENSOR_REPORT_MAX_EVERY             12              // Maximum
 
