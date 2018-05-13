@@ -85,13 +85,13 @@
 // Features (values below are non-default values)
 //--------------------------------------------------------------------------------
 
-//#define ALEXA_SUPPORT          0
+#define ALEXA_SUPPORT          0
 //#define BROKER_SUPPORT         0
-//#define DEBUG_SERIAL_SUPPORT   0
+#define DEBUG_SERIAL_SUPPORT   0
 //#define DEBUG_TELNET_SUPPORT   0
 //#define DEBUG_UDP_SUPPORT      1
 //#define DEBUG_WEB_SUPPORT      0
-//#define DOMOTICZ_SUPPORT       0
+#define DOMOTICZ_SUPPORT       0
 //#define HOMEASSISTANT_SUPPORT  0
 //#define I2C_SUPPORT            1
 //#define INFLUXDB_SUPPORT       1
@@ -109,7 +109,7 @@
 //#define SSDP_SUPPORT           1
 //#define TELNET_SUPPORT         0
 //#define TERMINAL_SUPPORT       0
-//#define THINGSPEAK_SUPPORT     0
+#define THINGSPEAK_SUPPORT     0
 //#define UART_MQTT_SUPPORT      1
 //#define WEB_SUPPORT            0
 
