@@ -13,6 +13,10 @@
 
 #include <SoftwareSerial.h>
 
+#ifndef SENSEAIR_SMART_SLEEP
+#define SENSEAIR_SMART_SLEEP 0 
+#endif
+
 // SenseAir sensor utils
 class SenseAir
 {
@@ -20,6 +24,7 @@ protected:
     SoftwareSerial *_serial; // Should initialized by child class
 
 public:
+    //
     int sendCommand(byte command[]) {
         byte recv_buf[7] = {0xff};
         byte data_buf[2] = {0xff};
@@ -42,6 +47,7 @@ public:
         return value;
     }
 
+    //
     int readCo2(void) {
         int co2 = 0;
         byte frame[8] = {0};
@@ -73,6 +79,7 @@ private:
         return crc;
     }
 
+    //
     static int getBitOfInt(int reg, int pos) {
         // Create a mask
         int mask = 0x01 << pos;
@@ -86,7 +93,7 @@ private:
         return result;
     }
 
-
+    //
     static void buildFrame(byte slaveAddress,
                 byte  functionCode,
                 short startAddress,
@@ -204,7 +211,17 @@ class SenseAirSensor : public BaseSensor, SenseAir {
 
             _error = SENSOR_ERROR_OK;
 
+#if SENSEAIR_SMART_SLEEP
+            if (_readCount++ > 30) {
+                if (_readCount % 6)
+                    return;
+            }
+#endif
+
             unsigned int co2 = readCo2();
+            #if SENSOR_DEBUG
+                debugSend("[SENSOR] SenseAir: Read CO2 = %d\n", co2);
+            #endif
             if (co2 >= 5000 || co2 < 100)
             {
                 _co2 = _lastCo2;
@@ -227,6 +244,9 @@ class SenseAirSensor : public BaseSensor, SenseAir {
         unsigned long _startTime;
         unsigned int _co2;
         unsigned int _lastCo2;
+#if SENSEAIR_SMART_SLEEP
+        unsigned int _readCount = 0;
+#endif
 };
 
 
