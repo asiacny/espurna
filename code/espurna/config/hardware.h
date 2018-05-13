@@ -58,17 +58,27 @@
     #define DEVICE              "LOLIN"
 
     // Buttons
-    #define BUTTON1_PIN         0
-    #define BUTTON1_MODE        BUTTON_PUSHBUTTON | BUTTON_DEFAULT_HIGH
-    #define BUTTON1_RELAY       1
+    //#define BUTTON1_PIN         0
+    //#define BUTTON1_MODE        BUTTON_PUSHBUTTON | BUTTON_DEFAULT_HIGH
+    //#define BUTTON1_RELAY       1
 
     // Relays
-    #define RELAY1_PIN          12
-    #define RELAY1_TYPE         RELAY_TYPE_NORMAL
+    //#define RELAY1_PIN          12
+    //#define RELAY1_TYPE         RELAY_TYPE_NORMAL
 
     // LEDs
-    #define LED1_PIN            2
-    #define LED1_PIN_INVERSE    1
+    //#define LED1_PIN            2
+    //#define LED1_PIN_INVERSE    1
+    
+    #define PMSX003_SUPPORT       1
+    #define PMS_TYPE              PMS_TYPE_5003ST
+    #define PMS_SMART_SLEEP       1
+
+    #define SENSEAIR_SUPPORT      1
+    #define SENSEAIR_SMART_SLEEP  1
+ 
+    #define DIGITAL_SUPPORT       1
+    #define DIGITAL_PIN           4
 
 #elif defined(WEMOS_D1_MINI_RELAYSHIELD)
 
@@ -211,6 +221,14 @@
     // Relays
     #define RELAY1_PIN          12
     #define RELAY1_TYPE         RELAY_TYPE_NORMAL
+
+#ifdef FAKE_BUTTON3
+    #define BUTTON3_PIN         3
+    #define BUTTON3_MODE        BUTTON_SWITCH | BUTTON_SET_PULLUP | BUTTON_DEFAULT_HIGH
+    #define BUTTON3_RELAY       2
+    #define RELAY2_PIN          20
+    #define RELAY2_TYPE         RELAY_TYPE_NORMAL
+#endif
 
     // LEDs
     #define LED1_PIN            13
@@ -446,6 +464,59 @@
     // LEDs
     #define LED1_PIN            13
     #define LED1_PIN_INVERSE    1
+#elif defined(HASSMART_DUAL)
+
+    #define MANUFACTURER        "HASSMART"
+    #define DEVICE              "DUAL"
+
+    // Buttons
+    #define BUTTON1_PIN         0       // Button 0 on header
+    #define BUTTON2_PIN         14      // Button 1 on header
+    #define BUTTON1_RELAY       1
+    #define BUTTON2_RELAY       2
+    #define BUTTON1_MODE        BUTTON_PUSHBUTTON | BUTTON_DEFAULT_HIGH
+    #define BUTTON2_MODE        BUTTON_PUSHBUTTON | BUTTON_DEFAULT_HIGH
+
+    // Relays
+    #define RELAY1_PIN          12
+    #define RELAY2_PIN          5
+    #define RELAY1_TYPE         RELAY_TYPE_NORMAL
+    #define RELAY2_TYPE         RELAY_TYPE_NORMAL
+
+    // LEDs
+    #define LED1_PIN            13
+    #define LED1_PIN_INVERSE    0
+
+#elif defined(HASSMART_TRIPLE)
+
+    #define MANUFACTURER        "HASSMART"
+    #define DEVICE              "TRIPLE"
+
+  // Buttons
+    #define BUTTON1_PIN         0
+    #define BUTTON2_PIN         14
+    #define BUTTON3_PIN         2
+
+    #define BUTTON1_MODE        BUTTON_PUSHBUTTON | BUTTON_DEFAULT_HIGH
+    #define BUTTON2_MODE        BUTTON_PUSHBUTTON | BUTTON_DEFAULT_HIGH
+    #define BUTTON3_MODE        BUTTON_PUSHBUTTON | BUTTON_DEFAULT_HIGH
+
+    #define BUTTON1_RELAY       1
+    #define BUTTON2_RELAY       2
+    #define BUTTON3_RELAY       3
+
+    // Relays
+    #define RELAY1_PIN          12
+    #define RELAY2_PIN          5
+    #define RELAY3_PIN          4
+
+    #define RELAY1_TYPE         RELAY_TYPE_NORMAL
+    #define RELAY2_TYPE         RELAY_TYPE_NORMAL
+    #define RELAY3_TYPE         RELAY_TYPE_NORMAL
+
+    // LEDs
+    #define LED1_PIN            13
+    #define LED1_PIN_INVERSE    0
 
 #elif defined(ITEAD_SONOFF_4CH)
 
