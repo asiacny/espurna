@@ -10,11 +10,11 @@
 #define DEVICE_NAME             MANUFACTURER "_" DEVICE     // Concatenate both to get a unique device name
 
 #ifndef ADMIN_PASS
-#define ADMIN_PASS              "fibonacci"     // Default password (WEB, OTA, WIFI)
+#define ADMIN_PASS              "asdfqwer"     // Default password (WEB, OTA, WIFI)
 #endif
 
 #ifndef USE_PASSWORD
-#define USE_PASSWORD            1               // Insecurity caution! Disabling this will disable password querying completely.
+#define USE_PASSWORD            0               // Insecurity caution! Disabling this will disable password querying completely.
 #endif
 
 #ifndef LOOP_DELAY_TIME
@@ -165,19 +165,19 @@
 
 // Topics that will be reported in heartbeat
 #define HEARTBEAT_REPORT_STATUS     1
-#define HEARTBEAT_REPORT_IP         1
-#define HEARTBEAT_REPORT_MAC        1
-#define HEARTBEAT_REPORT_RSSI       1
-#define HEARTBEAT_REPORT_UPTIME     1
-#define HEARTBEAT_REPORT_DATETIME   1
-#define HEARTBEAT_REPORT_FREEHEAP   1
-#define HEARTBEAT_REPORT_VCC        1
+#define HEARTBEAT_REPORT_IP         0
+#define HEARTBEAT_REPORT_MAC        0
+#define HEARTBEAT_REPORT_RSSI       0
+#define HEARTBEAT_REPORT_UPTIME     0
+#define HEARTBEAT_REPORT_DATETIME   0
+#define HEARTBEAT_REPORT_FREEHEAP   0
+#define HEARTBEAT_REPORT_VCC        0
 #define HEARTBEAT_REPORT_RELAY      1
 #define HEARTBEAT_REPORT_LIGHT      1
-#define HEARTBEAT_REPORT_HOSTNAME   1
-#define HEARTBEAT_REPORT_APP        1
-#define HEARTBEAT_REPORT_VERSION    1
-#define HEARTBEAT_REPORT_BOARD      1
+#define HEARTBEAT_REPORT_HOSTNAME   0
+#define HEARTBEAT_REPORT_APP        0
+#define HEARTBEAT_REPORT_VERSION    0
+#define HEARTBEAT_REPORT_BOARD      0
 #define HEARTBEAT_REPORT_INTERVAL   0
 
 //------------------------------------------------------------------------------
@@ -189,7 +189,7 @@
 #endif
 
 #ifndef LOADAVG_REPORT
-#define LOADAVG_REPORT          1               // Should we report Load average over MQTT?
+#define LOADAVG_REPORT          0               // Should we report Load average over MQTT?
 #endif
 
 //------------------------------------------------------------------------------
@@ -197,11 +197,11 @@
 //------------------------------------------------------------------------------
 
 #ifndef BUTTON_DEBOUNCE_DELAY
-#define BUTTON_DEBOUNCE_DELAY       50          // Debounce delay (ms)
+#define BUTTON_DEBOUNCE_DELAY       0          // Debounce delay (ms)
 #endif
 
 #ifndef BUTTON_DBLCLICK_DELAY
-#define BUTTON_DBLCLICK_DELAY       500         // Time in ms to wait for a second (or third...) click
+#define BUTTON_DBLCLICK_DELAY       0         // Time in ms to wait for a second (or third...) click
 #endif
 
 #ifndef BUTTON_LNGCLICK_DELAY
@@ -218,7 +218,7 @@
 
 // Default boot mode: 0 means OFF, 1 ON and 2 whatever was before
 #ifndef RELAY_BOOT_MODE
-#define RELAY_BOOT_MODE             RELAY_BOOT_OFF
+#define RELAY_BOOT_MODE             RELAY_BOOT_SAME
 #endif
 
 // 0 means ANY, 1 zero or one and 2 one and only one
@@ -285,16 +285,16 @@
 #endif
 
 #ifndef WIFI_SCAN_NETWORKS
-#define WIFI_SCAN_NETWORKS          1                   // Perform a network scan before connecting
+#define WIFI_SCAN_NETWORKS          0                   // Perform a network scan before connecting
 #endif
 
 // Optional hardcoded configuration (up to 2 networks)
 #ifndef WIFI1_SSID
-#define WIFI1_SSID                  ""
+#define WIFI1_SSID                  "Router"
 #endif
 
 #ifndef WIFI1_PASS
-#define WIFI1_PASS                  ""
+#define WIFI1_PASS                  "asdfqwer"
 #endif
 
 #ifndef WIFI1_IP
@@ -381,7 +381,7 @@
 
 // This will only be enabled if WEB_SUPPORT is 1 (this is the default value)
 #ifndef WS_AUTHENTICATION
-#define WS_AUTHENTICATION           1           // WS authentication ON by default (see #507)
+#define WS_AUTHENTICATION           0           // WS authentication ON by default (see #507)
 #endif
 
 #ifndef WS_BUFFER_SIZE
@@ -562,7 +562,7 @@
 
                                                     // autoconnect to the first MQTT broker found if none defined
 #ifndef MQTT_SERVER
-#define MQTT_SERVER                 ""              // Default MQTT broker address
+#define MQTT_SERVER                 "Hassbian"      // Default MQTT broker address
 #endif
 
 #ifndef MQTT_USER
@@ -935,7 +935,7 @@
 #endif
 
 #ifndef NTP_SERVER
-#define NTP_SERVER                  "pool.ntp.org"  // Default NTP server
+#define NTP_SERVER                  "cn.pool.ntp.org"  // Default NTP server
 #endif
 
 #ifndef NTP_TIMEOUT
@@ -943,11 +943,11 @@
 #endif
 
 #ifndef NTP_TIME_OFFSET
-#define NTP_TIME_OFFSET             60              // Default timezone offset (GMT+1)
+#define NTP_TIME_OFFSET             480              // Default timezone offset (GMT+8)
 #endif
 
 #ifndef NTP_DAY_LIGHT
-#define NTP_DAY_LIGHT               1               // Enable daylight time saving by default
+#define NTP_DAY_LIGHT               0               // Enable daylight time saving by default
 #endif
 
 #ifndef NTP_SYNC_INTERVAL
@@ -963,7 +963,7 @@
 #endif
 
 #ifndef NTP_DST_REGION
-#define NTP_DST_REGION              0               // 0 for Europe, 1 for USA (defined in NtpClientLib)
+#define NTP_DST_REGION              1               // 0 for Europe, 1 for USA (defined in NtpClientLib)
 #endif
 
 // -----------------------------------------------------------------------------
