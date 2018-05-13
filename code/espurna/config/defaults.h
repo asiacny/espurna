@@ -346,7 +346,7 @@
 #endif
 
 #ifndef LED1_MODE
-#define LED1_MODE           LED_MODE_WIFI
+#define LED1_MODE           LED_MODE_OFF
 #endif
 #ifndef LED2_MODE
 #define LED2_MODE           LED_MODE_MQTT
