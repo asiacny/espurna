@@ -689,8 +689,8 @@
 #define MQTT_TOPIC_MIRED            "mired"
 #define MQTT_TOPIC_KELVIN           "kelvin"
 
-#define MQTT_STATUS_ONLINE          "1"         // Value for the device ON message
-#define MQTT_STATUS_OFFLINE         "0"         // Value for the device OFF message (will)
+#define MQTT_STATUS_ONLINE          "online"         // Value for the device ON message
+#define MQTT_STATUS_OFFLINE         "offline"         // Value for the device OFF message (will)
 
 #define MQTT_ACTION_RESET           "reboot"    // RESET MQTT topic particle
 
